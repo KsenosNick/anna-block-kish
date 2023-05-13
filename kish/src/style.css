@@ -1,89 +1,108 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 body {
+  background-color: #060606;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  position: relative;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-.card {
-  padding: 2em;
-}
-
-#app {
-  max-width: 1280px;
+.container {
+  max-width: 800px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: 0 auto;
-  padding: 2rem;
+}
+
+.left-anim,
+.right-anim {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background-image: url(./assets/img/anarchism.png);
+  background-repeat-x: no-repeat;
+  background-size: contain;
+  display: block;
+  width: 50px;
+  height: 100%;
+}
+
+.left-anim {
+  left: 15px;
+}
+
+.right-anim {
+  right: 15px;
+}
+
+.content {
+  list-style: none;
+  padding: 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
   text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+.content img {
+  width: clamp(200px, 80vw, 800px);
+  margin: 0 auto 30px;
+}
+
+.content__list {
+  padding-left: 0;
+}
+
+.content__list > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.content__song {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.content__like {
+  font-size: 25px;
+  background-color: transparent;
+  background: linear-gradient(180deg, #fbce3e 0%, #eb8436 100%);
+  border: 3px solid #ab2a06;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.content__like svg {
+  width: 30px;
+  height: 30px;
+}
+
+.content__list > li path {
+  fill: #060606;
+  transition: 0.2s;
+}
+
+.content__like:hover path {
+  fill: #ab2a06;
+}
+
+.content__list > li span:last-child {
+  flex-basis: 40px;
+  text-align: right;
+}
+
+@media (max-width: 1100px) {
+  .left-anim,
+  .right-anim {
+    display: none;
   }
 }
